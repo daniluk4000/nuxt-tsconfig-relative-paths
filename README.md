@@ -5,11 +5,14 @@ information.
 
 Module only works in development mode.
 
-## What doesn't work at the moment
+## #Components alias
 
-As `#components` are inserted AFTER custom module hooks I wasn't able to modify them without high cost. I will maybe do it later, compilation types will still work though. 
+As `#components` are inserted AFTER custom module hooks I wasn't able to modify this entry. The reason behind this is
+that for example in prepare hook "prepare:types" is the last hook. #components are being added AFTER "last hook",
+therefore without tricky solutions I will not be able to replace #components path.
 
-If you need types, as workaround you can use `##components` alias for now. But I highly recommend to stay on `#components` and wait for my fix or Nuxt team official fix (this is preferred of course).
+If you need types, as workaround you can use `##components` alias for now. But I highly recommend to stay
+on `#components` and wait for my fix or Nuxt team official fix (this is preferred of course).
 
 ## Quick Setup
 
