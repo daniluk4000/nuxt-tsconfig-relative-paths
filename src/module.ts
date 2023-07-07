@@ -15,7 +15,7 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {},
   setup(options, nuxt) {
-    if (!nuxt.options.dev) return;
+    if (!nuxt.options.dev && !nuxt.options._prepare) return;
 
     const root = nuxt.options.rootDir;
     const slashRoot = join(root, '/');

@@ -1,6 +1,6 @@
 {
   "name": "nuxt-tsconfig-relative-paths",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": "https://github.com/daniluk4000/nuxt-tsconfig-relative-paths",
   "license": "MIT",
   "type": "module",
