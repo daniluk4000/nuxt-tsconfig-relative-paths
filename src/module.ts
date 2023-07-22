@@ -17,7 +17,7 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     if (!nuxt.options.dev && !nuxt.options._prepare) return;
 
-    const root = nuxt.options.srcDir || nuxt.options.rootDir;
+    const root = nuxt.options.srcDir ?? nuxt.options.rootDir;
     const slashRoot = join(root, '/');
     const cwd = process.cwd();
     const slashCwd = join(cwd, '/');
