@@ -3,19 +3,25 @@ import {join, relative} from "path";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
+  disableUpgradeWarning?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-tsconfig-relative-paths',
     compatibility: {
-      nuxt: '>=3.6.0'
-    }
+      nuxt: '~3.6'
+    },
+    configKey: 'tsconfigRelativePaths',
   },
   // Default configuration options of the Nuxt module
   defaults: {},
   setup(options, nuxt) {
     if (!nuxt.options.dev && !nuxt.options._prepare) return;
+
+    if (!options.disableUpgradeWarning) {
+      console.warn("nuxt-tsconfig-relative-paths: Nuxt Team has fixed relative paths issue in Nuxt 3.7. Please consider upgrading to it, or set tsconfigRelativePaths: { disableUpgradeWarning: true } in Nuxt Config to disable this warning if you have your reasons.")
+    }
 
     const root = nuxt.options.srcDir ?? nuxt.options.rootDir;
     const slashRoot = join(root, '/');
