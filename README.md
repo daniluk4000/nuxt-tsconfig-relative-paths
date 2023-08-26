@@ -1,9 +1,23 @@
+# Skip using this module
+Nuxt Team has fixed relative paths issue in Nuxt 3.7.0. Please remove this module if you had it and don't use if you wanted to.
+
 # Nuxt TSConfig Relative Paths
 
-This module allows you to rollback to relative paths in tsconfig. See https://github.com/nuxt/nuxt/issues/21827 for more
+This module allows you to rollback to relative paths in tsconfig for Nuxt 3.6.x. See https://github.com/nuxt/nuxt/issues/21827 for more
 information.
 
-Module only works in development mode.
+Module only works in development mode and on ~3.6 versions.
+
+## Configuration
+If you want to silence upgrade warning for now, you can do that via Nuxt Config:
+
+```typescript
+export default defineNuxtConfig({
+  tsconfigRelativePaths: {
+    disableUpgradeWarning: true,
+  },
+});
+```
 
 ## #Components alias
 
@@ -12,7 +26,7 @@ that for example in prepare hook "prepare:types" is the last hook. #components a
 therefore without tricky solutions I will not be able to replace #components path.
 
 If you need types, as workaround you can use `##components` alias for now. But I highly recommend to stay
-on `#components` and wait for my fix or Nuxt team official fix (this is preferred of course).
+on `#components` and upgrade to Nuxt ^3.7 ASAP.
 
 ## Quick Setup
 
